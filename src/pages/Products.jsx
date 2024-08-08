@@ -20,7 +20,7 @@ function Products() {
     return (
         <>
             <Navbar />
-            <div className='bg-blue-400 w-full h-[auto]'>
+            <div className='bg-slate-600 w-full h-[auto]'>
                 <div className="container">
                     <div className=''>
                         <CardsProducts cards={product} />

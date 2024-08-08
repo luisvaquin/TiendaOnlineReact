@@ -16,3 +16,12 @@ export const getProducts = async () => {
         return []; // Retorna un array vacío en caso de error
     }
 }
+
+//Agregar logica para ddelete products
+export const deleteProducts = async () => {
+    try {
+        const URL_API = ''
+    } catch {
+        false
+    }
+}
