@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CardsProducts from '../components/CardsProducts';
 import Navbar from '../components/navbar/Navbar';
 import SectionHead from '../components/SectionHead';
+import NavbarAb from '../components/NavbarAb';
 
 function Products() {
     const [product, setProduct] = useState([]);
@@ -19,7 +20,7 @@ function Products() {
 
     return (
         <>
-            <Navbar />
+            <NavbarAb />
             <div className='bg-slate-600 w-full h-[auto]'>
                 <div className="container">
                     <div className=''>
