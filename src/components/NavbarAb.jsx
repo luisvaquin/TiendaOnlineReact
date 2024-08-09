@@ -14,9 +14,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = [
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/products' },
+    { label: 'Contact', path: '/contact' },
+];
 
 function NavbarAb(props) {
     const { window } = props;
@@ -34,9 +39,9 @@ function NavbarAb(props) {
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
+                    <ListItem key={item.label} disablePadding>
+                        <ListItemButton component={Link} to={item.path} sx={{ textAlign: 'center' }}>
+                            <ListItemText primary={item.label} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -47,9 +52,9 @@ function NavbarAb(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'absolute' }}>
             <CssBaseline />
-            <AppBar component="nav">
+            <AppBar component="nav" className='h-[3.5rem]'>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -69,8 +74,13 @@ function NavbarAb(props) {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{ color: '#fff' }}>
-                                {item}
+                            <Button
+                                key={item.label}
+                                component={Link}
+                                to={item.path}
+                                sx={{ color: '#fff' }}
+                            >
+                                {item.label}
                             </Button>
                         ))}
                     </Box>
@@ -93,24 +103,12 @@ function NavbarAb(props) {
                     {drawer}
                 </Drawer>
             </nav>
-            <Box component="main" sx={{ p: 3 }}>
-                <Toolbar />
-                <Typography>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique unde
-                    fugit veniam eius, perspiciatis sunt? Corporis qui ducimus quibusdam,
-                    aliquam dolore excepturi quae. Distinctio enim at eligendi perferendis in
-                    cum quibusdam sed quae
-                </Typography>
-            </Box>
+
         </Box>
     );
 }
 
 NavbarAb.propTypes = {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
     window: PropTypes.func,
 };
 

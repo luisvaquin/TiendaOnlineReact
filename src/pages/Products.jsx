@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { getProducts } from '../services/product';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CardsProducts from '../components/CardsProducts';
-import Navbar from '../components/navbar/Navbar';
 import SectionHead from '../components/SectionHead';
 import NavbarAb from '../components/NavbarAb';
 

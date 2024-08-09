@@ -1,10 +1,8 @@
 import React from 'react'
-import Navbar from '../components/navbar/Navbar'
 
 const HomePage = () => {
     return (
         <>
-            <Navbar />
             <div className="h-screen w-full overflow-hidden flex flex-nowrap text-center" id="slider">
                 <div className="bg-blue-600 text-white space-y-4 flex-none w-full flex flex-col items-center justify-center">
                     <h2 className="text-4xl max-w-md">WELCOME AND LuisRods</h2>
