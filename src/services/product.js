@@ -6,7 +6,7 @@ export const getProducts = async () => {
         const res = await axios.get(URL_API);
         //validacion para ver respuesta del servidor 
         if (res.status === 200) {
-            console.log('data and endpoint', res.data);
+            //console.log('data and endpoint', res.data);
             return res.data; // Retorna los datos aquí
         } else {
             return [];
