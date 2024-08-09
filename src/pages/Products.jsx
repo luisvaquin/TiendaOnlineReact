@@ -22,14 +22,12 @@ function Products() {
         <>
             <NavbarAb />
             <br />
-            <div className='bg-slate-600 w-full h-[auto]'>
-                <div className="container">
-                    <div className=''>
-                        <CardsProducts cards={product} />
-                    </div>
-                    <SectionHead />
-                    <br />
+            <div className='bg-slate-300 w-full h-[auto]'>
+                <div className=''>
+                    <CardsProducts cards={product} />
                 </div>
+                <SectionHead />
+                <br />
             </div>
         </>
     );

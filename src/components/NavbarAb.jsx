@@ -19,7 +19,9 @@ import { Link } from 'react-router-dom';
 const drawerWidth = 240;
 const navItems = [
     { label: 'Home', path: '/' },
-    { label: 'About', path: '/products' },
+    { label: 'Productos', path: '/products' },
+    { label: 'Contactanos', path: '/products' },
+
 ];
 
 function NavbarAb(props) {
@@ -32,7 +34,7 @@ function NavbarAb(props) {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', fontSize: '25px' }}> {/* Ajustado el tamaño global */}
-            <Typography variant="h6" sx={{ my: 3, fontSize: '25px' }}> {/* Ajustado tamaño del Typography */}
+            <Typography variant="h6" sx={{ my: 4, fontSize: '25px' }}> {/* Ajustado tamaño del Typography */}
                 LuisRod
             </Typography>
             <Divider />
@@ -41,7 +43,7 @@ function NavbarAb(props) {
                     <> <ListItem key={item.label} disablePadding>
                         <ListItemButton component={Link} to={item.path}
                             sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item.label} sx={{ fontSize: '38px' }} />
+                            <ListItemText primary={item.label} sx={{ fontSize: '40px' }} />
                         </ListItemButton>
                     </ListItem>
                     </>
@@ -57,8 +59,8 @@ function NavbarAb(props) {
     return (
         <Box sx={{ display: 'absolute' }}>
             <CssBaseline />
-            <AppBar component="nav" className='h-[4rem]'>
-                <Toolbar className='p-[2rem]'>
+            <AppBar component="nav" className='h-[4.2rem]' sx={{ backgroundColor: '#343', color: '#fff' }}>
+                <Toolbar className='p-[1rem]'>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
