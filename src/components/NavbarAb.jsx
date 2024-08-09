@@ -20,7 +20,6 @@ const drawerWidth = 240;
 const navItems = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/products' },
-    { label: 'Contact', path: '/contact' },
 ];
 
 function NavbarAb(props) {
@@ -32,30 +31,34 @@ function NavbarAb(props) {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', fontSize: '25px' }}> {/* Ajustado el tamaño global */}
+            <Typography variant="h6" sx={{ my: 3, fontSize: '25px' }}> {/* Ajustado tamaño del Typography */}
+                LuisRod
             </Typography>
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item.label} disablePadding>
-                        <ListItemButton component={Link} to={item.path} sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item.label} />
+                    <> <ListItem key={item.label} disablePadding>
+                        <ListItemButton component={Link} to={item.path}
+                            sx={{ textAlign: 'center' }}>
+                            <ListItemText primary={item.label} sx={{ fontSize: '38px' }} />
                         </ListItemButton>
                     </ListItem>
+                    </>
+
                 ))}
             </List>
         </Box>
     );
+
 
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
         <Box sx={{ display: 'absolute' }}>
             <CssBaseline />
-            <AppBar component="nav" className='h-[3.5rem]'>
-                <Toolbar>
+            <AppBar component="nav" className='h-[4rem]'>
+                <Toolbar className='p-[2rem]'>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -65,6 +68,9 @@ function NavbarAb(props) {
                     >
                         <MenuIcon />
                     </IconButton>
+                    <div className='text-wrap text-[22px]'>
+                        <a href="/">LuisRods</a>
+                    </div>
                     <Typography
                         variant="h6"
                         component="div"

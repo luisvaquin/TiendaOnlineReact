@@ -10,7 +10,8 @@ const CardsProducts = ({ cards }) => {
     return (
         //Agregar conteiner de boostrap para cards
         <>
-            <div className="pt-[6rem] p-[3rem] max-[1000px]:pt-[5rem] grid grid-cols-4 max-[1000px]:grid-cols-1
+            <div className="pt-[6rem] p-[1rem] max-[1000px]:pt-[3rem] max-[1000px]:text-[25px]
+             grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4
              items-center justify-center max-[1000px]:flex-wrap">
                 {cards.map((element, index) => (
                     <div className="flex-shrink-0 m-6 relative overflow-hidden bg-slate-500 rounded-lg max-w-xs 
@@ -27,7 +28,7 @@ const CardsProducts = ({ cards }) => {
                             <span className="block opacity-75 -mb-1">{element.description}</span>
                             <br />
                             <div className="flex justify-between">
-                                <span className="block font-semibold text-xl">{element.name}</span>
+                                <span className="block font-semibold text-[1rem]">{element.name}</span>
                                 <span className="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none items-center">
                                     Q. {element.price}</span>
                             </div>
@@ -35,7 +36,6 @@ const CardsProducts = ({ cards }) => {
                     </div>
                 ))}
             </div>
-
         </>
     );
 };
