@@ -9,15 +9,14 @@ const CardsProducts = ({ cards }) => {
         getProducts();
         setTimeout(() => {
             setLoading(false);
-        }, 1350);
+        }, 2000);
     }, []);
-
 
 
     if (loading) {
         return (
             <>
-                <div className='pt-[4rem] w-full  h-auto m-[50%]'>
+                <div className='pt-[4rem] w-full  h-auto'>
                     <div aria-label="Loading..." role="status" class="flex items-center space-x-2 bg-center">
                         <svg class="h-20 w-20 animate-spin stroke-gray-500" viewBox="0 0 256 256">
                             <line x1="128" y1="32" x2="128" y2="64" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
@@ -43,11 +42,16 @@ const CardsProducts = ({ cards }) => {
     }
 
     if (cards.length === 0) {
-        //Agregar componente de respuesta de peticion vacia
-        return <div className='bg-black text-white '>
-            No hay productos registrados //Agregar un componente de  402
-        </div>;
+        {/*//Agregar componente de respuesta de peticion vacia*/ }
+        return (
+            <>
+                <div className='bg-black text-white pt-[3rem]'>
+                    No hay productos en la base de datos siu
+                </div>
+            </>
+        );
     }
+
 
     return (
         //Agregar conteiner de boostrap para cards

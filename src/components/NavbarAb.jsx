@@ -35,7 +35,7 @@ function NavbarAb(props) {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', fontSize: '25px' }}> {/* Ajustado el tamaño global */}
             <Typography variant="h6" sx={{ my: 4, fontSize: '25px' }}> {/* Ajustado tamaño del Typography */}
-                LuisRod
+                ServicesRd
             </Typography>
             <Divider />
             <List>
@@ -71,7 +71,7 @@ function NavbarAb(props) {
                         <MenuIcon />
                     </IconButton>
                     <div className='text-wrap text-[22px]'>
-                        <a href="/">LuisRods</a>
+                        <a href="/">ServicesRd</a>
                     </div>
                     <Typography
                         variant="h6"
