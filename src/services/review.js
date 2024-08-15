@@ -1,6 +1,8 @@
 //agregar de service de endponint de reviews
 import axios from "axios";
 
+
+//Metodo axios de retorno de datos get
 export const getReviews = async () => {
     const URL_API_R = ('https://66ac393ef009b9d5c7315d26.mockapi.io/apiLuisRod/reviews');
     try {

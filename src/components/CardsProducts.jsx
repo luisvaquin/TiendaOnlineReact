@@ -9,14 +9,14 @@ const CardsProducts = ({ cards }) => {
         getProducts();
         setTimeout(() => {
             setLoading(false);
-        }, 2000);
+        }, 350);
     }, []);
 
 
     if (loading) {
         return (
             <>
-                <div className='pt-[4rem] w-full  h-auto'>
+                <div className='pt-[4rem] w-full h-auto'>
                     <div aria-label="Loading..." role="status" class="flex items-center space-x-2 bg-center">
                         <svg class="h-20 w-20 animate-spin stroke-gray-500" viewBox="0 0 256 256">
                             <line x1="128" y1="32" x2="128" y2="64" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>

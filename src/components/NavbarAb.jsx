@@ -15,52 +15,63 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import { handleNavbarScroll } from './scrollHandler';  // Importar la lógica del scroll
 
 const drawerWidth = 240;
 const navItems = [
     { label: 'Home', path: '/' },
     { label: 'Productos', path: '/products' },
-    { label: 'Contactanos', path: '/products' },
-
+    { label: 'Contactanos', path: '/element' },
 ];
 
 function NavbarAb(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [navBackground, setNavBackground] = React.useState('transparent');
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
 
+    React.useEffect(() => {
+        const cleanup = handleNavbarScroll(setNavBackground);  // Usar la lógica del scroll
+        return cleanup;
+    }, []);
+
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', fontSize: '25px' }}> {/* Ajustado el tamaño global */}
-            <Typography variant="h6" sx={{ my: 4, fontSize: '25px' }}> {/* Ajustado tamaño del Typography */}
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', fontSize: '35px' }}>
+            <Typography variant="h6" sx={{ my: 4, fontSize: '25px' }}>
                 ServicesRd
             </Typography>
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <> <ListItem key={item.label} disablePadding>
-                        <ListItemButton component={Link} to={item.path}
-                            sx={{ textAlign: 'center' }}>
+                    <ListItem key={item.label} disablePadding>
+                        <ListItemButton component={Link} to={item.path} sx={{ textAlign: 'center' }}>
                             <ListItemText primary={item.label} sx={{ fontSize: '40px' }} />
                         </ListItemButton>
                     </ListItem>
-                    </>
-
                 ))}
             </List>
         </Box>
     );
-
 
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
         <Box sx={{ display: 'absolute' }}>
             <CssBaseline />
-            <AppBar component="nav" className='h-[4.2rem]' sx={{ backgroundColor: '#343', color: '#fff' }}>
-                <Toolbar className='p-[1rem]'>
+            <AppBar
+                component="nav"
+                className="h-[4.2rem]"
+                sx={{
+                    backgroundColor: navBackground,
+                    color: navBackground === 'transparent' ? '#fff' : '#000',
+                    transition: 'background-color 0.3s ease',
+                    boxShadow: 'none',
+                }}
+            >
+                <Toolbar className="p-[1rem]">
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -70,7 +81,7 @@ function NavbarAb(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <div className='text-wrap text-[22px]'>
+                    <div className="text-wrap text-[22px]">
                         <a href="/">ServicesRd</a>
                     </div>
                     <Typography
@@ -86,7 +97,7 @@ function NavbarAb(props) {
                                 key={item.label}
                                 component={Link}
                                 to={item.path}
-                                sx={{ color: '#fff' }}
+                                sx={{ color: navBackground === 'transparent' ? '#fff' : '#000' }}
                             >
                                 {item.label}
                             </Button>
@@ -101,7 +112,7 @@ function NavbarAb(props) {
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
                     ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
+                        keepMounted: true,
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },
@@ -111,7 +122,6 @@ function NavbarAb(props) {
                     {drawer}
                 </Drawer>
             </nav>
-
         </Box>
     );
 }
