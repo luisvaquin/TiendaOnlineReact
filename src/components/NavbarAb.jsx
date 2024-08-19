@@ -82,7 +82,7 @@ function NavbarAb(props) {
                         <MenuIcon />
                     </IconButton>
                     <div className="text-wrap text-[22px]">
-                        <a href="/">ServicesRd</a>
+                        <a href="/">Services</a>
                     </div>
                     <Typography
                         variant="h6"

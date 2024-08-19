@@ -1,6 +1,7 @@
 import React from 'react'
 import NavbarAb from '../components/NavbarAb'
 import Carousel from '../components/Carousel'
+import DemoComp from '../components/DemoComp'
 
 
 const HomePage = () => {
@@ -8,12 +9,11 @@ const HomePage = () => {
     return (
         <>
             <NavbarAb />
-
-            <Carousel />
-            <div className="h-[100vh] w-full overflow-hidden flex flex-nowrap text-center" id="slider">
+            <DemoComp />
+            <div className="h-[100vh] w-full overflow-hidden flex flex-nowra    p text-center" id="slider">
                 <div className="bg-blue-600 text-white space-y-4 flex-none w-full flex flex-col items-center justify-center p-3">
                     <h2 className="text-4xl max-w-md">WELCOME AND LuisRods</h2>
-                    <p className="max-w-md">Bienvenido a mi tienda online xd</p>
+                    <p className="max-w-md">Bienvenido a mi tienda </p>
                 </div>
                 <div className="bg-pink-400 text-white space-y-4 flex-none w-full flex flex-col items-center justify-center">
                     <h2 className="text-4xl max-w-md">Tailwind CSS works by scanning all of your HTML</h2>

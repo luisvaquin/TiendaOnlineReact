@@ -9,7 +9,7 @@ const CardsProducts = ({ cards }) => {
         getProducts();
         setTimeout(() => {
             setLoading(false);
-        }, 350);
+        }, 1000);
     }, []);
 
 
