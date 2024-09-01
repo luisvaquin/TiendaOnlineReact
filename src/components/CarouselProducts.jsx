@@ -107,7 +107,7 @@ const CarouselProducts = () => {
                                 <div className="flex justify-between items-center mt-4">
                                     <span className="text-2xl font-extrabold text-gray-900">Q{card.price.toFixed(2)}</span>
                                     <a href={card.link}
-                                        className="text-white bg-fuchsia-950 hover:bg-fuchsia-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                        className="text-white bg-indigo-700 hover:bg-fuchsia-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
                                             <path strokeLinecap="round" strokeLinejoin="round"

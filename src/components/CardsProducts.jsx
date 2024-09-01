@@ -56,7 +56,7 @@ const CardsProducts = ({ cards }) => {
     return (
         //Agregar conteiner de boostrap para cards
         <>
-            <br />
+
             <div className="pt-[auto] p-[2rem] max-[1000px]:pt-[auto] grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3
              xl:grid-cols-4 2xl:grid-cols-5 items-center">
                 {/*Agregar tamaño horizontal de ajuste and cards para iphone*/}

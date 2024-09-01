@@ -22,6 +22,8 @@ const navItems = [
     { label: 'Home', path: '/' },
     { label: 'Productos', path: '/products' },
     { label: 'Contactanos', path: '/element' },
+    { label: 'Prueba', path: '/error' },
+
 ];
 
 function NavbarAb(props) {
