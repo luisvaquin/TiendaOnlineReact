@@ -5,11 +5,12 @@ import Products from "../pages/Products";
 import Menu from "../pages/Menu";
 import Carousel from "../components/Carousel";
 import DemoComp from "../components/DemoComp";
-
+import Slider from "../pages/welcom";
+import ImageCarousel from "../pages/carousell";
 const routes = createBrowserRouter([
     {
         path: "/", //Ruta establecida 
-        element: <HomePage /> //Page establecido
+        element: <ImageCarousel /> //Elemento a renderizar
     }, {
         path: "/menu",
         element: <Menu />
